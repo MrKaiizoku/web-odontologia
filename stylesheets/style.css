@@ -1,0 +1,588 @@
+@import url('normalize.css');
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+/* Basics */
+@font-face{font-family:Cubano; src:url('webfonts/cubano-regular-webfont.ttf')}
+
+body{
+	font-family: Arial, sans-serif;
+	background: #fff;
+	font-weight: 400;
+	font-size: 15px;
+	color:#fff ;
+	overflow: hidden;
+
+}
+a{
+	text-decoration: none;
+}
+
+.clr{
+	clear: both;
+	padding: 0;
+	height: 0;
+	margin: 0;
+}
+
+
+
+/* Container */
+
+.container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.container > input,
+.container > a {
+	position: fixed;
+	top: 0px;
+	width: 33.3%;
+	font-family:Cubano,Impact,Arial,sans-serif;
+	text-transform:uppercase;
+	cursor: pointer;
+	font-size: 23px;
+	height: 38px;
+	line-height: 38px;
+	-webkit-box-shadow: 0px 0px 5px #343434;
+	box-shadow: 0px 0px 5px #343434;
+}
+
+
+.container > input {
+	opacity: 0;
+	z-index: 1000;
+}
+
+.container > a {
+	z-index: 10;
+	background: #000;
+	color: #fff;
+	text-align: center;
+	text-shadow: 1px 1px 2px #666;
+}
+
+.container:before {
+	content: '';
+	position: fixed;
+	width: 100%;
+	height: 37px;
+	background: #000;
+	z-index: 9;
+	top: 0;
+}
+
+#radio-1, #radio-1 + a {
+	left: 0;
+}
+
+#radio-2, #radio-2 + a {
+	left: 33.3%;
+}
+
+#radio-3, #radio-3 + a {
+	left: 66.6%;
+}
+
+
+input#radio-1:checked + a,
+input#radio-1:checked:hover + a {
+  background:#005dc7;
+  box-shadow: none;
+}
+
+input#radio-2:checked + a,
+input#radio-2:checked:hover + a  {
+  background:#7ac900;
+  box-shadow: none;
+}
+
+input#radio-3:checked + a,
+input#radio-3:checked:hover + a  {
+  background:#fec211;
+  box-shadow: none;
+}
+
+
+input:checked + a,
+input:checked:hover + a,
+footer a
+{
+-webkit-border-top-left-radius: 3px;
+-webkit-border-top-right-radius: 3px;
+-moz-border-radius-topleft: 3px;
+-moz-border-radius-topright: 3px;
+border-top-left-radius: 3px;
+border-top-right-radius: 3px;
+
+}
+
+.scroll {
+	position: relative;
+}
+
+.scroll,
+.panel {
+	width: 100%;
+	height: 100%;
+}
+
+.panel{
+	background: #fff;
+	overflow: hidden;
+}
+
+
+input:hover + a{
+	background: #343434;
+}
+
+
+.scroll,
+input:checked + a,
+input:checked:hover + a  {
+	top: 0;
+	left: 0;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+
+	/* hardware acceleration */
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+}
+
+
+
+
+#radio-1:checked ~ .scroll {
+	-webkit-transform: translateY(0%);
+	-moz-transform: translateY(0%);
+	-o-transform: translateY(0%);
+	-ms-transform: translateY(0%);
+	transform: translateY(0%);
+}
+#radio-2:checked ~ .scroll {
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	-o-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+#radio-3:checked ~ .scroll {
+	-webkit-transform: translateY(-200%);
+	-moz-transform: translateY(-200%);
+	-o-transform: translateY(-200%);
+	-ms-transform: translateY(-200%);
+	transform: translateY(-200%);
+}
+
+
+
+/* Bg Color */
+
+.color-1 {
+	background:#005dc7;
+}
+
+.color-2 {
+	background:#7ac900;
+}
+
+.color-3 {
+	background:#fec211;
+}
+
+
+/* Content */
+
+
+.panel h2 {
+	position:relative;
+	left:0%;
+    top:4%;
+	font-family:Cubano;
+	letter-spacing:1px;
+	color:#fff;
+	text-shadow: 1px 1px 3px #343434;
+	font-size: 40px;
+	font-weight: 700;
+	padding: 0;
+	text-align: center;
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+
+}
+
+.panel h2:hover {
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+
+}
+
+#radio-1:checked ~ .scroll #home h2,
+#radio-2:checked ~ .scroll #sobre h2,
+#radio-3:checked ~ .scroll #contacto h2 {
+
+	-webkit-animation: moveDown 0.8s ease-in-out 0.4s backwards;
+	-moz-animation: moveDown 0.8s ease-in-out 0.4s backwards;
+	-o-animation: moveDown 0.8s ease-in-out 0.4s backwards;
+	-ms-animation: moveDown 0.8s ease-in-out 0.4s backwards;
+	animation: moveDown 0.8s ease-in-out 0.4s backwards;
+}
+
+
+@-webkit-keyframes moveDown{
+	0% {
+		-webkit-transform: translateY(-50px);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes moveDown{
+	0% {
+		-moz-transform: translateY(-50px);
+		opacity: 0;
+	}
+	100% {
+		-moz-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-o-keyframes moveDown{
+	0% {
+		-o-transform: translateY(-50px);
+		opacity: 0;
+	}
+	100% {
+		-o-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes moveDown{
+	0% {
+		-ms-transform: translateY(-50px);
+		opacity: 0;
+	}
+	100% {
+		-ms-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes moveDown{
+	0% {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+.panel p {
+	position: relative;
+	left: 25%;
+	top: 35%;
+	text-align: center;
+	font-size: 16px;
+	line-height: 22px;
+	z-index: 2;
+	padding: 0;
+	width: 50%;
+
+}
+
+#radio-1:checked ~ .scroll #home p,
+#radio-2:checked ~ .scroll #sobre p,
+#radio-3:checked ~ .scroll #contacto p{
+-webkit-animation: moveUp 0.8s ease-in-out ;
+	-moz-animation: moveUp 0.8s ease-in-out;
+	-o-animation: moveUp 0.8s ease-in-out;
+	-ms-animation: moveUp 0.8s ease-in-out;
+	animation: moveUp 0.8s ease-in-out;
+}
+
+@-webkit-keyframes moveUp{
+	0% {
+		-webkit-transform: translateY(50px);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes moveUp{
+	0% {
+		-moz-transform: translateY(50px);
+		opacity: 0;
+	}
+	100% {
+		-moz-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-o-keyframes moveUp{
+	0% {
+		-o-transform: translateY(50px);
+		opacity: 0;
+	}
+	100% {
+		-o-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes moveUp{
+	0% {
+		-ms-transform: translateY(50px);
+		opacity: 0;
+	}
+	100% {
+		-ms-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes moveUp{
+	0% {
+		transform: translateY(50px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+#form-main{
+	width:100%;
+	float:left;
+	padding-top:0px;
+}
+
+#form-div {
+	background-color:rgba(72,72,72,0.4);
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:35px;
+	padding-bottom:50px;
+	width: 450px;
+	float: left;
+	left: 52%;
+	position: absolute;
+  margin-top:30px;
+	margin-left: -260px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+
+.feedback-input {
+	color:#3c3c3c;
+	font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+	font-size: 18px;
+	border-radius: 0;
+	line-height: 22px;
+	background-color: #fbfbfb;
+	padding: 13px 13px 13px 54px;
+	margin-bottom: 10px;
+	width:100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+  border: 3px solid rgba(0,0,0,0);
+}
+
+.feedback-input:focus{
+	background: #fff;
+	box-shadow: 0;
+	border: 3px solid #3498db;
+	color: #3498db;
+	outline: none;
+  padding: 13px 13px 13px 54px;
+}
+
+.focused{
+	color:#30aed6;
+	border:#30aed6 solid 3px;
+}
+
+/* Icons ---------------------------------- */
+#name{
+	background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#name:focus{
+	background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+	background-size: 30px 30px;
+	background-position: 8px 5px;
+  background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#email{
+	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#email:focus{
+	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+	background-size: 30px 30px;
+  background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#comment{
+	background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+textarea {
+	width: 100%;
+	height: 150px;
+	line-height: 150%;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+	background-color:white;
+}
+
+#button-blue{
+	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+	float:left;
+	width: 100%;
+	border: #fbfbfb solid 4px;
+	cursor:pointer;
+	background-color: #3498db;
+	color:white;
+	font-size:24px;
+	padding-top:22px;
+	padding-bottom:22px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+
+#button-blue:hover{
+	background-color: rgba(0,0,0,0);
+	color: #0493bd;
+}
+	
+.submit:hover {
+	color: #3498db;
+}
+	
+.ease {
+	width: 0px;
+	height: 74px;
+	background-color: #fbfbfb;
+	-webkit-transition: .3s ease;
+	-moz-transition: .3s ease;
+	-o-transition: .3s ease;
+	-ms-transition: .3s ease;
+	transition: .3s ease;
+}
+
+.submit:hover .ease{
+  width:100%;
+  background-color:white;
+}
+
+@media only screen and (max-width: 580px) {
+	#form-div{
+		left: 3%;
+		margin-right: 3%;
+		width: 88%;
+		margin-left: 0;
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+}
+
+
+
+
+/* Footer */
+
+
+footer {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	cursor: pointer;
+	font-size: 16px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	background:#000;
+}
+
+
+footer a {
+	z-index: 10;
+	font-weight: 700;
+	background: #e23a6e;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(151,24,64,0.2);
+	padding: 0 5px;
+
+}
+
+
+/* Media Queries */
+
+
+@media screen and (max-width: 360px) {
+	.container > a {
+		font-size: 10px;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.panel h2 {
+		font-size: 42px;
+	}
+
+	.panel p {
+		width: 90%;
+		left: 5%;
+		margin-top: 0;
+	}
+
+	.container > a {
+		font-size: 13px;
+	}
+
+}
+
